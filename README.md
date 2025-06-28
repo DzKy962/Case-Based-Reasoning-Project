@@ -42,15 +42,44 @@ Sebelum menjalankan proyek ini, pastikan Anda memiliki:
 
 1. **Clone the Repository:**
 
-```bash
 git clone https://github.com/DzKy962/Case-Based-Reasoning-Project.git
 cd Case-Based-Reasoning-Project
 
 2. **Create a Virtual Environment (recommended):**
+   
 python -m venv venv
 # On Linux/Mac:
 source venv/bin/activate
 # On Windows:
 venv\Scripts\activate
+
+3. **install Dependencies: The project requires several Python libraries listed in requirements.txt. Install them using:**
+
+   !pip install -r requirements.txt
+
+   pandas
+numpy
+requests
+beautifulsoup4
+pdfminer.six
+Sastrawi
+scikit-learn
+transformers
+torch
+sentence-transformers
+faiss-cpu
+rank_bm25
+matplotlib
+
+
+4. **Download Pre-trained IndoBERT Model**
+
+   from transformers import AutoTokenizer, AutoModel
+
+tokenizer = AutoTokenizer.from_pretrained("indobenchmark/indobert-base-p2")
+model = AutoModel.from_pretrained("indobenchmark/indobert-base-p2")
+
+
+
 
 
