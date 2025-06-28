@@ -38,3 +38,11 @@ Sebelum menjalankan proyek ini, pastikan Anda memiliki:
 - **Opsional: GPU** untuk mempercepat komputasi embedding menggunakan IndoBERT
 
 
+## Installation
+
+1. **Clone the Repository:**
+
+```bash
+git clone https://github.com/DzKy962/Case-Based-Reasoning-Project.git
+cd Case-Based-Reasoning-Project
+
