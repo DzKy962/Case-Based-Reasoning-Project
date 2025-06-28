@@ -212,7 +212,55 @@ python Tahap 4 – Solution Reuse.ipynb
 python Tahap 5 – Model Evaluation.ipynb
 ```
 
+Catatan: Pastikan output dari setiap tahap tersedia (misalnya data/raw/*.txt dari Tahap 1, data/processed/cases.csv dari Tahap 2) sebelum lanjut ke tahap berikutnya.
 
+## Example Commands
 
+Stage 1: Scrape and Clean Data:
+```bash
+python scripts/01_case_base.py
+```
+- `data/raw/case_*.txt, cleaned_putusan_hasil, logs/cleaning.log`
 
+Stage 2: Represent Cases:
+```bash
+python scripts/02_representation.py
+```
+- `Output: data/processed/cases.csv, data/processed/cases.json, data/processed/embeddings.json`
 
+Stage 3: Retrieve Similar Cases:
+```bash
+python scripts/03_retrieval.py
+```
+- `Output: data/eval/queries.json, data/eval/retrieval_metrics.csv, data/eval/failure_cases_retrieval_*.json`
+
+Stage 4: Predict Outcomes:
+```bash
+python scripts/04_predict.py
+```
+- `Output: data/results/predictions.csv, logs.txt`
+
+Stage 5: Evaluate Models:
+```bash
+python scripts/05_evaluation.py
+```
+- `Output: data/eval/metrics.csv, data/eval/metrics_line_chart.png, data/eval/failure_cases_*.json`
+
+Example Query Prediction: Modify scripts/04_predict.py to test a custom query:
+
+```bash
+# Configuration
+RETRIEVAL_METHOD = "tfidf"  # "nb" NaiveBayes, "tfidf" TF-IDF, "bert" IndoBERT, and "bm25" BM25
+PREDICTION_STRATEGY = "majority"  # Weighted or majority for better scores
+SIMILARITY_THRESHOLD = 0.1  # Minimum: 0.0 (includes all cases, regardless of similarity).Maximum: 1.0 (requires perfect similarity, rarely achieved).
+
+# Define new queries with some known ground truths for evaluation
+new_queries = [
+    {"query_id": 1, "query": "Terdakwa melakukan penganiayaan ringan tanpa luka di tempat umum", "ground_truth": "penjara 1 tahun"},
+    {"query_id": 2, "query": "Terdakwa bersama-sama melakukan pengeroyokan menyebabkan luka berat", "ground_truth": "penjara 3 tahun"},
+    {"query_id": 3, "query": "Terdakwa melakukan penggelapan dalam jabatan senilai 10 juta", "ground_truth": "penjara 1 tahun"},
+    {"query_id": 4, "query": "Terdakwa menghasut orang untuk melakukan kekerasan", "ground_truth": "penjara 2 tahun"},
+    {"query_id": 5, "query": "Terdakwa melakukan kekerasan berat terhadap anak di bawah umur", "ground_truth": "penjara 5 tahun"},
+    {"query_id": 6, "query": "Terdakwa membantu tetangga menyeberang jalan", "ground_truth": "None"}
+]
+```
