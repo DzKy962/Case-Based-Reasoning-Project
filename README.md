@@ -23,9 +23,6 @@
   - [Stage 5: Model Evaluation](#stage-5-model-evaluation)
 - [Running the Full Pipeline](#running-the-full-pipeline)
 - [Example Commands](#example-commands)
-- [Output Files](#output-files)
-- [Contributing](#contributing)
-- [License](#license)
 
 
 ## Prerequisites
