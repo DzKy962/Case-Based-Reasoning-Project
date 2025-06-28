@@ -46,3 +46,11 @@ Sebelum menjalankan proyek ini, pastikan Anda memiliki:
 git clone https://github.com/DzKy962/Case-Based-Reasoning-Project.git
 cd Case-Based-Reasoning-Project
 
+2. **Create a Virtual Environment (recommended):**
+python -m venv venv
+# On Linux/Mac:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+
