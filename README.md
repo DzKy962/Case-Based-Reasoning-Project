@@ -190,7 +190,27 @@ CBR-Project/
 
 
 
+## 📦 Running the Full Pipeline
 
+Untuk menjalankan seluruh pipeline secara berurutan, eksekusi setiap script tahap demi tahap. Pastikan output dari setiap tahap tersedia sebelum melanjutkan ke tahap berikutnya.
+
+---
+
+## 🛠️ 1. Prepare the Environment
+
+Aktifkan environment dan install dependencies:
+
+```bash
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+```bash
+python Tahap 1 – Membangun Case Base.ipynb
+python Tahap 2 – Case Representation.ipynb
+python Tahap 3 – Case Retrieval.ipynb
+python Tahap 4 – Solution Reuse.ipynb
+python Tahap 5 – Model Evaluation.ipynb
+```
 
 
 
