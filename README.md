@@ -215,35 +215,35 @@ Catatan: Pastikan output dari setiap tahap tersedia (misalnya data/raw/*.txt dar
 
 Stage 1: Scrape and Clean Data:
 ```bash
-python scripts/01_case_base.py
+python Tahap 1 – Membangun Case Base.ipynb
 ```
 - `data/raw/case_*.txt, cleaned_putusan_hasil, logs/cleaning.log`
 
 Stage 2: Represent Cases:
 ```bash
-python scripts/02_representation.py
+python Tahap 2 – Case Representation.ipynb
 ```
 - `Output: data/processed/cases.csv, data/processed/cases.json, data/processed/embeddings.json`
 
 Stage 3: Retrieve Similar Cases:
 ```bash
-python scripts/03_retrieval.py
+python Tahap 3 – Case Retrieval.ipynb
 ```
 - `Output: data/eval/queries.json, data/eval/retrieval_metrics.csv, data/eval/failure_cases_retrieval_*.json`
 
 Stage 4: Predict Outcomes:
 ```bash
-python scripts/04_predict.py
+python Tahap 4 – Solution Reuse.ipynb
 ```
 - `Output: data/results/predictions.csv, logs.txt`
 
 Stage 5: Evaluate Models:
 ```bash
-python scripts/05_evaluation.py
+python Tahap 5 – Model Evaluation.ipynb
 ```
 - `Output: data/eval/metrics.csv, data/eval/metrics_line_chart.png, data/eval/failure_cases_*.json`
 
-Example Query Prediction: Modify scripts/04_predict.py to test a custom query:
+Example Query Prediction: Modify Tahap 4 – Solution Reuse.ipynb to test a custom query:
 
 ```bash
 # Configuration
@@ -261,3 +261,4 @@ new_queries = [
     {"query_id": 6, "query": "Terdakwa membantu tetangga menyeberang jalan", "ground_truth": "None"}
 ]
 ```
+bisa di custom querynya sesuai dengan klasifikasi pidana penganiayaan
